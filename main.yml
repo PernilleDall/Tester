@@ -1,0 +1,35 @@
+name: Deploy to Pages with Secret
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+env:
+  USD_TO_EUR_EXCHANGE_RATE: ${{secrets.USD_TO_EUR_EXCHANGE_RATE}}
+
+Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # Single deploy job since we're just deploying
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      
+name: Checkout
+      uses: actions/checkout@v3
+name: Install Dependencies
+    run: npm i
+name: test index
+  run: npm run test
