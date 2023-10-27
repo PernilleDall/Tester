@@ -32,4 +32,8 @@ name: Checkout
 name: Install Dependencies
     run: npm i
 name: test index
+<<<<<<< HEAD
   run: npm run test
+=======
+  run: npm run test
+>>>>>>> a7adc7939ef239b2ad1bfa83f2bbb139999dbff7
